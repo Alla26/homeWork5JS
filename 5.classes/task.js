@@ -107,8 +107,13 @@ class Student {
     return this.#journal[subject].push(mark); //добавляет в свойство оценку
   }
 
-  getAverageBySubject(subject) {
-    // средняя по предмету
+  getAverageBySubject(subject) {                                      // средняя по предмету
+    let sum = 0;
+    this.#journal[subject].forEach((mark) => (sum += mark));
+    return sum / this.#journal[subject].length;
+  }
+
+  getAverage() {                                               // средняя оценка
     let sum = 0;
     this.#journal[subject].forEach((mark) => (sum += mark));
     return sum / this.#journal[subject].length;
