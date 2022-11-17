@@ -100,6 +100,7 @@ class Student {
   addMark(mark, subject) {
     if (mark < 1 || mark > 5 || typeof mark !== "number") {
       console.log(`Оценка должна быть числом от 1 до 5 включительно`);
+      return;
     } else if (this.#journal[subject] === undefined) {
       //проверяет, есть ли свойство, если нет - создает
       this.#journal[subject] = [];
